@@ -8,7 +8,12 @@ NOT READY FOR PRODUCTION YET
 You can see a demo here: 
 https://innologica.github.io/vue2-daterange-picker/
 
-## Installlation
+## ADDED BY BAHY
+- Better Mobile support
+- Ability to Auto Apply
+- Implemented button names
+
+## Installation
 
 ``` bash
 # install via npm
@@ -37,10 +42,12 @@ export default {
 </template>
 ```
 
+
 ## TODO
 
 - [ ] documentation
 - [ ] tests
+- [ ] calendar range [show between two dates.]
 - [ ] disabled dates
 - [ ] make install function
 - [ ] export single components
