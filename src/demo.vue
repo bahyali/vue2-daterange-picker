@@ -46,6 +46,8 @@
         <div style="height: 400px;">
             <date-range-picker
                     :opens="opens"
+                    :localeData="locale"
+                    :autoApply="false"
                     :startDate="startDate"
                     :endDate="endDate"
                     @update="updateValues"
@@ -55,27 +57,30 @@
 </template>
 
 <script>
-  import DateRangePicker from './components/DateRangePicker'
+    import DateRangePicker from './components/DateRangePicker'
 
-  export default {
-    components: {DateRangePicker},
-    name: 'DateRangePickerDemo',
-    data () {
-      //                    :locale-data="{ daysOfWeek: [ 'Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ] }"
-      return {
-        opens: 'center',
-        startDate: '2017-09-19',
-        endDate: '2017-10-09'
-      }
-    },
-    methods: {
-      updateValues (values) {
-        console.log(values)
-        this.startDate = values.startDate.toISOString().slice(0, 10)
-        this.endDate = values.endDate.toISOString().slice(0, 10)
-      }
+    export default {
+        components: {DateRangePicker},
+        name: 'DateRangePickerDemo',
+        data() {
+            //                    :locale-data="{ daysOfWeek: [ 'Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ] }"
+            return {
+                opens: 'center',
+                startDate: '2017-09-19',
+                endDate: '2017-10-09',
+                locale: {
+                    applyLabel:'Apply'
+                }
+            }
+        },
+        methods: {
+            updateValues(values) {
+                console.log(values)
+                this.startDate = values.startDate.toISOString().slice(0, 10)
+                this.endDate = values.endDate.toISOString().slice(0, 10)
+            }
+        }
     }
-  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
